@@ -1,0 +1,22 @@
+{
+  "name": "simple_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Haven't test\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIRHQ/simple_nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FIRHQ/simple_nodejs/issues"
+  },
+  "homepage": "https://github.com/FIRHQ/simple_nodejs#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
