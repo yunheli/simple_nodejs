@@ -1,4 +1,4 @@
 #!/bin/bash
 git pull
 COUNT=$(wc -l < README.md)
-echo $COUNT >> README.md && git add . && git commit -m "Test nodejs project ($COUNT)" && git push origin master
+echo $COUNT >> README.md && git add . && git commit -m "Test nodejs project ($COUNT)" && git push
