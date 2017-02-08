@@ -26,8 +26,11 @@ build:
     - npm-install
     # A step that executes `npm test` command
     - npm-test
-
-    - sherzberg/slack-notify@0.0.11
+  after-steps:
+      - install-packages:
+          packages: ruby
+      - wantedly/pretty-slack-notify:
+          webhook_url: https://hooks.slack.com/services/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
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
