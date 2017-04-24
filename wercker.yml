@@ -26,6 +26,8 @@ build:
     - npm-install
     # A step that executes `npm test` command
     - npm-test
+
+    - npm-update
     
     - install-packages:
         packages: ruby
