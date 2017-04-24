@@ -13,8 +13,9 @@ box: ippokm/AWS-Ansible
 services:
     - postgres
     # http://devcenter.wercker.com/docs/services/postgresql.html
-
     - mongo
+
+    - wercker/rabbitmq@1.0.1
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
   # The steps that will be executed on build
