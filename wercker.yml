@@ -42,26 +42,22 @@ build:
           echo "npm version $(npm -v) running"
           echo "pipeline : $(ls /pipeline)"
 a:
-  # The steps that will be executed on build
-  # Steps make up the actions in your pipeline
-  # Read more about steps on our dev center:
-  # http://devcenter.wercker.com/docs/steps/index.html
-  steps:
-    # A step that executes `npm install` command
-    - npm-install
-    # A step that executes `npm test` command
-    - npm-test
-
-    - install-packages:
-        packages: ruby
-        
-    - wantedly/pretty-slack-notify:
-        webhook_url: https://hooks.slack.com/services/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
-
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
     - script:
-        name: echo nodejs information
+        name: echo a information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+          echo "pipeline : $(ls /pipeline)"
+b:
+    - script:
+        name: echo b information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+          echo "pipeline : $(ls /pipeline)"
+c:
+    - script:
+        name: echo c information
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
