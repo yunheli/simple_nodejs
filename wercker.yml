@@ -3,7 +3,7 @@
 # If you want Nodesource's container you would reference nodesource/node
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: jacekmarchwicki/android
+box: python
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -23,42 +23,4 @@ build:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     # A step that executes `npm install` command
-    - npm-install
-    # A step that executes `npm test` command
-    - npm-test
-
-    - install-packages:
-        packages: ruby
-        
-    - wantedly/pretty-slack-notify:
-        webhook_url: https://hooks.slack.com/services/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
-
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-          echo "pipeline : $(ls /pipeline) a"
-a:
-    - script:
-        name: echo a information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-          echo "pipeline : $(ls /pipeline) "
-b:
-    - script:
-        name: echo b information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-          echo "pipeline : $(ls /pipeline)"
-c:
-    - script:
-        name: echo c information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-          echo "pipeline : $(ls /pipeline)"
+  
