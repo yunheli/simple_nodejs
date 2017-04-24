@@ -27,8 +27,6 @@ build:
     # A step that executes `npm test` command
     - npm-test
 
-    - bigtruedata/install-node@2.1.1
-
     - install-packages:
         packages: ruby
         
