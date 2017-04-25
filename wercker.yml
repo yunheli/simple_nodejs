@@ -42,6 +42,6 @@ build:
         ls /pipeline
         cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR/aa  
   after-steps:
-  #     name: "after-steps"
-  #     code: |
-  #       echo "after step "
+      name: "after-steps"
+      code: |
+        echo "after step "
