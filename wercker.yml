@@ -23,6 +23,11 @@ build:
   # Steps make up the actions in your pipeline
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
+  after-steps:
+    - script:
+      name: "after-steps"
+      code: |
+        echo "after step "
   steps:
     # A step that executes `npm install` command
     - script:
@@ -41,8 +46,3 @@ build:
         echo $WERCKER_STEP_ID
         ls /pipeline
         cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR/aa  
-  after-steps:
-    - script:
-      name: "after-steps"
-      code: |
-        echo "after step "
