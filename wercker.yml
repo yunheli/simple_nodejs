@@ -44,4 +44,4 @@ build:
   after-steps:
       name: "after-steps"
       code: |
-        after step 
+        echo "after step "
