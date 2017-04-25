@@ -16,6 +16,7 @@ services:
     - mongo
 
     - letsxo/rabbitmq 
+    - redis
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
   # The steps that will be executed on build
