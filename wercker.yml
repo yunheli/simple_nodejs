@@ -29,5 +29,6 @@ build:
       name: "echo env"
       code: |
         env
-        ls /pipeline/
+        cd /pipeline/$WERCKER_STEP_ID
+        cat init.sh
   
