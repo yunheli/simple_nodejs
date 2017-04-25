@@ -40,4 +40,4 @@ build:
         cd /pipeline/$WERCKER_STEP_ID
         echo $WERCKER_STEP_ID
         ls /pipeline
-        cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR  
+        cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR/aa  
