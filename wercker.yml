@@ -29,4 +29,5 @@ build:
       name: "echo env"
       code: |
         env
+        cat "/pipeline/wercker-init-c377752b-2759-408e-9f85-6d4b2a0835e9/init.sh"
   
