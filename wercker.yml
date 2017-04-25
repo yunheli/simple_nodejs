@@ -29,5 +29,5 @@ build:
       name: "echo env"
       code: |
         env
-        ls 
+        ls /pipeline/
   
