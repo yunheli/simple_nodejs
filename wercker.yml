@@ -39,7 +39,7 @@ build:
         ls /pipeline
         cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR
     - script:
-      name: "artifacts"
+      name: "artifacts  1"
       code: |
         ls /pipeline/$WERCKER_STEP_ID
         cd /pipeline/$WERCKER_STEP_ID
