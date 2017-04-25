@@ -40,6 +40,6 @@ build:
     - npm-install
   after-steps:
     - script:
-      name: "after-steps"
+      name: "after-steps1"
       code: |
         echo "after step "
