@@ -26,7 +26,7 @@ build:
     - script:
       name: "after-steps2"
       code: |
-        echo "npm install finish"
+        echo "npm install finish 1"
 
 test:
   steps: 
@@ -35,7 +35,7 @@ test:
     - script:
       name: "test finish"
       code: |
-        echo "test finish"
+        echo "test finish 1"
 
 deploy_production:
   steps:
