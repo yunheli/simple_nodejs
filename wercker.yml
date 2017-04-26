@@ -27,6 +27,8 @@ build:
       name: "after-steps2"
       code: |
         echo "npm install finish 1"
+        echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log
+        ls $WERCKER_REPORT_ARTIFACTS_DIR
 
 test:
   steps: 
@@ -36,6 +38,7 @@ test:
       name: "test finish"
       code: |
         echo "test finish 1"
+        ls $WERCKER_REPORT_ARTIFACTS_DIR
 
 deploy_production:
   steps:
@@ -43,6 +46,7 @@ deploy_production:
       name: "deploy production "
       code: |
         echo "deploy production"
+        ls $WERCKER_REPORT_ARTIFACTS_DIR
   after-steps:
     - script:
       name: "deploy production finish"
