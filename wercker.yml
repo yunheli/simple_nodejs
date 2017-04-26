@@ -40,7 +40,7 @@ test:
 deploy_production:
   steps:
     - script:
-      name: "deploy production"
+      name: "deploy production "
       code: |
         echo "deploy production"
   after-steps:
