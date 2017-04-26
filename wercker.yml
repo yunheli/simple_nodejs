@@ -20,26 +20,31 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
-    # A step that executes `npm install` command
-    - script:
-      name: "echo env"
-      code: |
-        ls /pipeline/$WERCKER_STEP_ID
-        cd /pipeline/$WERCKER_STEP_ID
-        echo $WERCKER_STEP_ID
-        ls /pipeline
-        cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR
-    - script:
-      name: "artifacts  1"
-      code: |
-        ls /pipeline/$WERCKER_STEP_ID
-        cd /pipeline/$WERCKER_STEP_ID
-        echo $WERCKER_STEP_ID
-        ls /pipeline
-        cp -R /pipeline $WERCKER_REPORT_ARTIFACTS_DIR/aa  
+    # A step that executes `npm install` command 
     - npm-install
   after-steps:
     - script:
       name: "after-steps2"
       code: |
-        echo "after step "
+        echo "npm install finish"
+
+test:
+  steps: 
+    - npm-test
+  after-steps:
+    - script:
+      name: "test finish"
+      code: |
+        echo "test finish"
+
+deploy_production:
+  steps:
+    - script:
+      name: "deploy production"
+      code: |
+        echo "deploy production"
+  after-steps:
+    - script:
+      name: "deploy production finish"
+      code: |
+        echo "deploy production finish"
