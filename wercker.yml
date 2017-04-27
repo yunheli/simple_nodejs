@@ -68,6 +68,7 @@ deploy_production:
       code: |
         echo "deploy production"
         ls $WERCKER_REPORT_ARTIFACTS_DIR
+        env
   after-steps:
     - script:
       name: "deploy production finish"
