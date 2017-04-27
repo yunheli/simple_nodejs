@@ -12,10 +12,7 @@ box: node
 # http://devcenter.wercker.com/docs/services/index.html
 services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
-    - mongo
-    - id: redis
-      username: root
-      password: root
+    - mongodb
     - mysql
 
     # http://devcenter.wercker.com/docs/services/mongodb.html
