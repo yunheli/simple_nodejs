@@ -13,7 +13,7 @@ box: node
 services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
     - mongo
-    - redis
+    - id: redis
       ENV:
         MYSQL_ROOT_PASSWORD: root
     - mysql
