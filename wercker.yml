@@ -35,6 +35,7 @@ build:
         echo $A
         echo $B
         env
+        2/0
   after-steps:
     - script:
       name: "after-steps2"
