@@ -43,6 +43,9 @@ build:
       name: "after-steps2"
       code: |
         ls $WERCKER_OUTPUT_DIR
+    - install-packages:
+            packages: ruby
+    - wantedly/pretty-slack-notify
 
 test:
   steps: 
