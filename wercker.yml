@@ -13,6 +13,9 @@ box: node
 services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
     - mongo
+    - redis
+    - rabbitmq
+    - mysql
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
   # The steps that will be executed on build
@@ -29,6 +32,22 @@ build:
         export B=1
         export C=1
         export D=1
+    - script:
+      name: "mongo env"
+      code: |
+        env | grep mongo
+    - script:
+      name: "redis env"
+      code: |
+        env | grep redis
+    - script:
+      name: "rabbitmq env"
+      code: |
+        env | grep rabbitmq          
+    - script:
+      name: "mysql env"
+      code: |
+        env | grep mysql                              
     - script:
       name: "B"
       code: |
