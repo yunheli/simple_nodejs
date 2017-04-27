@@ -23,12 +23,18 @@ build:
     # A step that executes `npm install` command 
     - npm-install
     - script:
-      name: "after-steps2"
+      name: "A"
       code: |
         export A=1
         export B=1
         export C=1
         export D=1
+    - script:
+      name: "B"
+      code: |
+        echo $A
+        echo $B
+        env
   after-steps:
     - script:
       name: "after-steps2"
@@ -37,7 +43,7 @@ build:
         echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log
         ls $WERCKER_REPORT_ARTIFACTS_DIR
         echo $A
-        ENV
+        env
 
 test:
   steps: 
