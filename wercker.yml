@@ -37,6 +37,7 @@ build:
         echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log
         ls $WERCKER_REPORT_ARTIFACTS_DIR
         echo $A
+        ENV
 
 test:
   steps: 
