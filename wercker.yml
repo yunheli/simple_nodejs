@@ -44,7 +44,7 @@ build:
         ls $WERCKER_REPORT_ARTIFACTS_DIR
         echo $A
         env
-
+        cat $WERCKER_REPORT_MESSAGE_FILE
 test:
   steps: 
     - npm-test
