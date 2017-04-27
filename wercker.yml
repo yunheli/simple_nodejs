@@ -46,7 +46,7 @@ build:
 
 test:
   steps: 
-    - npm-test
+    # - npm-test
   after-steps:
     - script:
       name: "test finish"
