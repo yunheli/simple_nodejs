@@ -14,7 +14,6 @@ services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
     - mongo
     - redis
-    - rabbitmq
     - mysql
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
