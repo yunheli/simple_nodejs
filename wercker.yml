@@ -35,13 +35,12 @@ build:
         echo $A
         echo $B
         env
-        2/0
+        echo "npm install finish 1"
+        echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log  
   after-steps:
     - script:
       name: "after-steps2"
       code: |
-        echo "npm install finish 1"
-        echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log
         ls $WERCKER_REPORT_ARTIFACTS_DIR
         echo $A
         env
