@@ -13,7 +13,7 @@ box: node
 services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
     - mongo
-    - mysql
+    - id: mysql
       username: root
       password: root
 
