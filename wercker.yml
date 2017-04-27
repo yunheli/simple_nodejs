@@ -1,0 +1,82 @@
+# This references the default nodejs container from
+# the Docker Hub: https://registry.hub.docker.com/_/node/
+# If you want Nodesource's container you would reference nodesource/node
+# Read more about containers on our dev center
+# http://devcenter.wercker.com/docs/containers/index.html
+box: node
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# http://devcenter.wercker.com/docs/pipelines/index.html
+
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+services:
+    # http://devcenter.wercker.com/docs/services/postgresql.html
+    - mongo
+    # http://devcenter.wercker.com/docs/services/mongodb.html
+build:
+  # The steps that will be executed on build
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    # A step that executes `npm install` command 
+    - npm-install
+    - script:
+      name: "A"
+      code: |
+        export A=1
+        export B=1
+        export C=1
+        export D=1
+    - script:
+      name: "mongo env"
+      code: |
+        env | grep mongo                            
+    - script:
+      name: "B"
+      code: |
+        mkdir $WERCKER_OUTPUT_DIR/app
+        echo 1 >  $WERCKER_OUTPUT_DIR/app/1.log
+  after-steps:
+    - script:
+      name: "after-steps2"
+      code: |
+        ls $WERCKER_OUTPUT_DIR
+    - install-packages:
+            packages: ruby
+    - wantedly/pretty-slack-notify
+
+test:
+  steps: 
+    # - npm-test
+  after-steps:
+    - script:
+      name: "test finish"
+      code: |
+        ls 
+        pwd
+        echo "test finish 1"
+        ls $WERCKER_OUTPUT_DIR
+        echo "===================: test start"
+        echo $A
+        echo $B
+        echo "===================: test end"
+
+deploy_production:
+  steps:
+    - script:
+      name: "deploy production "
+      code: |
+        echo "deploy production"
+        ls $WERCKER_OUTPUT_DIR
+        env
+  after-steps:
+    - script:
+      name: "deploy production finish"
+      code: |
+        echo "deploy production finish"
+        echo "===================: deploy_production start"
+        echo $A
+        echo $B
+        echo "===================: deploy_production end"
