@@ -37,6 +37,7 @@ build:
         env
         echo "npm install finish 1"
         echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log  
+        echo "AAA" > /tmp/a.log  
   after-steps:
     - script:
       name: "after-steps2"
@@ -44,7 +45,8 @@ build:
         ls $WERCKER_REPORT_ARTIFACTS_DIR
         echo $A
         env
-        cat $WERCKER_REPORT_MESSAGE_FILE
+        ls /tmp
+
 test:
   steps: 
     - npm-test
