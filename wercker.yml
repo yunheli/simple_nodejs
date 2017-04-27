@@ -51,6 +51,8 @@ test:
     - script:
       name: "test finish"
       code: |
+        ls 
+        pwd
         echo "test finish 1"
         ls $WERCKER_OUTPUT_DIR
         echo "===================: test start"
