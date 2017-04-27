@@ -12,7 +12,7 @@ box: node
 # http://devcenter.wercker.com/docs/services/index.html
 services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
-    - mongodb
+    - mongo
     - mysql
 
     # http://devcenter.wercker.com/docs/services/mongodb.html
