@@ -34,19 +34,19 @@ build:
     - script:
       name: "mongo env"
       code: |
-        env | grep mongo
+        # env | grep mongo
     - script:
       name: "redis env"
       code: |
-        env | grep redis
+        # env | grep redis
     - script:
       name: "rabbitmq env"
       code: |
-        env | grep rabbitmq          
+        # env | grep rabbitmq          
     - script:
       name: "mysql env"
       code: |
-        env | grep mysql                              
+        # env | grep mysql                              
     - script:
       name: "B"
       code: |
