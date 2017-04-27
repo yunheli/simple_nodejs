@@ -22,6 +22,13 @@ build:
   steps:
     # A step that executes `npm install` command 
     - npm-install
+    - script:
+      name: "after-steps2"
+      code: |
+        export A=1
+        export B=1
+        export C=1
+        export D=1
   after-steps:
     - script:
       name: "after-steps2"
@@ -29,6 +36,7 @@ build:
         echo "npm install finish 1"
         echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log
         ls $WERCKER_REPORT_ARTIFACTS_DIR
+        echo $A
 
 test:
   steps: 
@@ -39,6 +47,10 @@ test:
       code: |
         echo "test finish 1"
         ls $WERCKER_REPORT_ARTIFACTS_DIR
+        echo "===================: test start"
+        echo $A
+        echo $B
+        echo "===================: test end"
 
 deploy_production:
   steps:
@@ -52,3 +64,7 @@ deploy_production:
       name: "deploy production finish"
       code: |
         echo "deploy production finish"
+        echo "===================: deploy_production start"
+        echo $A
+        echo $B
+        echo "===================: deploy_production end"
