@@ -14,9 +14,9 @@ services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
     - mongo
     - mysql
-      username: root
-      password: root
-
+      ENV:
+        MYSQL_USER: ROOT
+        MYSQL_PASSWORD: ROOT
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
   # The steps that will be executed on build
