@@ -32,36 +32,17 @@ build:
     - script:
       name: "mongo env"
       code: |
-        env | grep mongo
-    - script:
-      name: "redis env"
-      code: |
-        env | grep redis
-    - script:
-      name: "rabbitmq env"
-      code: |
-        env | grep rabbitmq          
-    - script:
-      name: "mysql env"
-      code: |
-        env | grep mysql                              
+        env | grep mongo                            
     - script:
       name: "B"
       code: |
-        echo $A
-        echo $B
-        env
-        echo "npm install finish 1"
-        echo "AAA" > $WERCKER_REPORT_ARTIFACTS_DIR/a.log  
-        echo "AAA" > /tmp/a.log  
+        mkdir $WERCKER_OUTPUT_DIR/app
+        echo 1 >  $WERCKER_OUTPUT_DIR/app/1.log
   after-steps:
     - script:
       name: "after-steps2"
       code: |
-        ls $WERCKER_REPORT_ARTIFACTS_DIR
-        echo $A
-        env
-        ls /tmp
+        ls $WERCKER_OUTPUT_DIR
 
 test:
   steps: 
@@ -71,7 +52,7 @@ test:
       name: "test finish"
       code: |
         echo "test finish 1"
-        ls $WERCKER_REPORT_ARTIFACTS_DIR
+        ls $WERCKER_OUTPUT_DIR
         echo "===================: test start"
         echo $A
         echo $B
@@ -83,7 +64,7 @@ deploy_production:
       name: "deploy production "
       code: |
         echo "deploy production"
-        ls $WERCKER_REPORT_ARTIFACTS_DIR
+        ls $WERCKER_OUTPUT_DIR
         env
   after-steps:
     - script:
