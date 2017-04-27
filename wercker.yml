@@ -14,6 +14,8 @@ services:
     # http://devcenter.wercker.com/docs/services/postgresql.html
     - mongo
     - mysql
+      username: root
+      password: root
 
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
